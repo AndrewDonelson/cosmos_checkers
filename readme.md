@@ -246,18 +246,29 @@ create x/checkers/types/message_play_move_test.go
 
 🎉 Created a message `playMove`.
 
-## Emit Game Information
+## Make Sure a Player Can Reject a Game
 
 ```sh
+ignite scaffold message rejectGame gameIndex --module checkers
 ```
 
 ### Modified Files
 
 ```
+modify proto/checkers/checkers/tx.proto
+modify x/checkers/client/cli/tx.go
+modify x/checkers/module_simulation.go
+modify x/checkers/types/codec.go
 ```
 
 ### Created Files
 
 ```
+create x/checkers/client/cli/tx_reject_game.go
+create x/checkers/keeper/msg_server_reject_game.go
+create x/checkers/simulation/reject_game.go
+create x/checkers/types/message_reject_game.go
+create x/checkers/types/message_reject_game_test.go
 ```
 
+🎉 Created a message `rejectGame`.

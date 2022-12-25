@@ -8,6 +8,7 @@ import (
 	"checkers/testutil/nullify"
 	"checkers/x/checkers/keeper"
 	"checkers/x/checkers/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
 )

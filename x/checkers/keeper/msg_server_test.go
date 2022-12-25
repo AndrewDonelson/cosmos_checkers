@@ -7,6 +7,7 @@ import (
 	keepertest "checkers/testutil/keeper"
 	"checkers/x/checkers/keeper"
 	"checkers/x/checkers/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 

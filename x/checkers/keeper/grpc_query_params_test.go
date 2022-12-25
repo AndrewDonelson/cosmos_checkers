@@ -5,6 +5,7 @@ import (
 
 	testkeeper "checkers/testutil/keeper"
 	"checkers/x/checkers/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/require"
 )

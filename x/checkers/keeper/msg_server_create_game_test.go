@@ -221,11 +221,19 @@ func TestCreate3GamesGetAll(t *testing.T) {
 }
 
 func TestCreateGameFarFuture(t *testing.T) {
+
+	// Setup the game with msgSrvr and keeper and context
 	msgSrvr, keeper, context := setupMsgServerCreateGame(t)
 	ctx := sdk.UnwrapSDKContext(context)
+
+	// get system info and set the next id to 1024
 	systemInfo, found := keeper.GetSystemInfo(ctx)
 	systemInfo.NextId = 1024
+
+	// save the system info
 	keeper.SetSystemInfo(ctx, systemInfo)
+
+	// create the response and check it for errors
 	createResponse, err := msgSrvr.CreateGame(context, &types.MsgCreateGame{
 		Creator: alice,
 		Black:   bob,
@@ -235,6 +243,8 @@ func TestCreateGameFarFuture(t *testing.T) {
 	require.EqualValues(t, types.MsgCreateGameResponse{
 		GameIndex: "1024",
 	}, *createResponse)
+
+	// get the system info and check it
 	systemInfo, found = keeper.GetSystemInfo(ctx)
 	require.True(t, found)
 	require.EqualValues(t, types.SystemInfo{

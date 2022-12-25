@@ -216,3 +216,32 @@ create x/checkers/types/message_create_game_test.go
 
 🎉 Created a message `createGame`.
 
+## Add a Way to Make a Move
+
+
+```sh
+ignite scaffold message playMove gameIndex fromX:uint fromY:uint toX:uint toY:uint \
+    --module checkers \
+    --response capturedX:int,capturedY:int,winner
+```
+
+### Modified Files
+
+```
+modify proto/checkers/checkers/tx.proto
+modify x/checkers/client/cli/tx.go
+modify x/checkers/module_simulation.go
+modify x/checkers/types/codec.go
+```
+
+### Created Files
+
+```
+create x/checkers/client/cli/tx_play_move.go
+create x/checkers/keeper/msg_server_play_move.go
+create x/checkers/simulation/play_move.go
+create x/checkers/types/message_play_move.go
+create x/checkers/types/message_play_move_test.go
+```
+
+🎉 Created a message `playMove`.

@@ -2,6 +2,7 @@ package keeper
 
 import (
 	"checkers/x/checkers/types"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 

@@ -6,9 +6,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/cosmos/cosmos-sdk/client"
-	// "github.com/cosmos/cosmos-sdk/client/flags"
 	"checkers/x/checkers/types"
+
+	"github.com/cosmos/cosmos-sdk/client"
 )
 
 var (
@@ -32,6 +32,7 @@ func GetTxCmd() *cobra.Command {
 
 	cmd.AddCommand(CmdCreatePost())
 	cmd.AddCommand(CmdCreateGame())
+	cmd.AddCommand(CmdPlayMove())
 	// this line is used by starport scaffolding # 1
 
 	return cmd

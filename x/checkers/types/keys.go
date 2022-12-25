@@ -12,6 +12,21 @@ const (
 
 	// MemStoreKey defines the in-memory store key
 	MemStoreKey = "mem_checkers"
+
+	// Game Create events
+	GameCreatedEventType      = "new-game-created" // Indicates what event type to listen to
+	GameCreatedEventCreator   = "creator"          // Subsidiary information
+	GameCreatedEventGameIndex = "game-index"       // What game is relevant
+	GameCreatedEventBlack     = "black"            // Is it relevant to me?
+	GameCreatedEventRed       = "red"              // Is it relevant to me?
+
+	// Player Move events
+	MovePlayedEventType      = "move-played"
+	MovePlayedEventCreator   = "creator"
+	MovePlayedEventGameIndex = "game-index"
+	MovePlayedEventCapturedX = "captured-x"
+	MovePlayedEventCapturedY = "captured-y"
+	MovePlayedEventWinner    = "winner"
 )
 
 func KeyPrefix(p string) []byte {

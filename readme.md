@@ -245,3 +245,19 @@ create x/checkers/types/message_play_move_test.go
 ```
 
 🎉 Created a message `playMove`.
+
+## Emit Game Information
+
+```sh
+```
+
+### Modified Files
+
+```
+```
+
+### Created Files
+
+```
+```
+

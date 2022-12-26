@@ -1,11 +1,11 @@
 {
-	"name": "Simple PWA",
-	"short_name": "Simple PWA",
+	"name": "Cosmos Checkers",
+	"short_name": "checkers",
 	"display": "standalone",
 	"start_url": "./?utm_source=pwa_install",
 	"scope": ".",
-	"theme_color": "#000",
-	"background_color": "#000",
+	"theme_color": "#fff",
+	"background_color": "#fff",
 	"icons":[
         {
             "src": "android-chrome-36x36.png",
@@ -25,11 +25,6 @@
         {
             "src": "android-chrome-96x96.png",
             "sizes": "96x96",
-            "type": "image/png"
-        },
-        {
-            "src": "android-chrome-144x144.png",
-            "sizes": "144x144",
             "type": "image/png"
         },
         {

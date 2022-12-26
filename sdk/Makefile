@@ -22,8 +22,8 @@ export LASTBUILDDATE=$(BUILDDATE)
 build:
 	$(info ***** building $(PROJECT_NAME) *****)
 	@GOOS=js GOARCH=wasm go build -ldflags "-s -w -X main.Version=$(VERSION) -X main.BuildDate=$(LASTBUILDDATE)" -o ./bin/$(PROJECT_NAME).wasm
-	cp ./bin/$(PROJECT_NAME).wasm ../frontend/static/$(PROJECT_NAME).wasm
-	
+	cp ./bin/$(PROJECT_NAME).wasm ../frontend/static/sdk.wasm
+
 clean:
 	$(info ***** cleaning $(PROJECT_NAME) *****)
 	@rm -f ./bin/$(PROJECT_NAME).wasm

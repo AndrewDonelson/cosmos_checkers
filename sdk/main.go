@@ -1,5 +1,4 @@
 //go:build js && wasm
-
 package main
 
 import (
@@ -19,13 +18,13 @@ func main() {
 	js.Global().Set("square", js.FuncOf(jsSquare))
 	js.Global().Set("getTestData", js.FuncOf(jsGetTestData))
 
-	fmt.Println(SDKVersion("GWF-SDK"), "ready")
+	fmt.Println(SDKVersion("Cosmos-Checkers-SDK"), "ready")
 
 	// Block the main thread forever
 	<-c
 
 	// This is a hack to prevent the program from exiting
-	fmt.Println(SDKVersion("GWF-SDK"), "exited")
+	fmt.Println(SDKVersion("Cosmos-Checkers-SDK"), "exited")
 }
 
 /* getTestData() is a function that makes a GET request to a REST API and returns the response body as a string.

@@ -9,7 +9,11 @@ import (
 )
 
 func jsSKDVersion(this js.Value, args []js.Value) interface{} {
-	return SDKVersion("GWF-SDK")
+	return SDKVersion("Cosmos-Checkers-SDK")
+}
+
+func jsConsumeAPINodeInfo(this js.Value, args []js.Value) interface{} {
+	return consumeAPI_NodeInfo()
 }
 
 func jsSquare(this js.Value, args []js.Value) interface{} {

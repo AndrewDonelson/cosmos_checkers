@@ -57,10 +57,19 @@
 		}
 
 		// Initialize the WebAssembly SDK
+		// const go = new Go();
+		// WebAssembly.instantiateStreaming(fetch("./sdk.wasm"), go.importObject).then((result) => {
+		// 	go.run(result.instance);
+		// });
+
 		const go = new Go();
-		WebAssembly.instantiateStreaming(fetch("./sdk.wasm"), go.importObject).then((result) => {
-			go.run(result.instance);
-		});		
+		WebAssembly.instantiateStreaming(fetch("sdk.wasm"), go.importObject).then(
+			(sdk) => {
+				go.run(sdk.instance);
+				console.log(sdk);
+				document.getElementById("sdkversion").innerHTML = SDKVersion();
+			}
+		);
 	</script>
 	<script defer src="./js/main.js"></script>
 </head>
@@ -124,10 +133,16 @@
 		</div>
 	</header>
 
-	<section>
-		<div class="container" style="min-height:100px">
-
+	<section id="welcome">
+		<div class="container text-center" style="min-height:100px">
+			<small style="color:lightgreen">Current Version</small>
+			<br />
+			<small id="sdkversion" style="color:darkgrey"></small>
 		</div>
+	</section>
+
+	<section id="game">
+		<img src="./images/game/board.jpg" alt="" id="gameimage" class="image-fluid"/>
 	</section>
 
 	<footer>

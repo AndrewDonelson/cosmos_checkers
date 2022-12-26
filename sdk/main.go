@@ -1,4 +1,5 @@
 //go:build js && wasm
+
 package main
 
 import (
@@ -15,6 +16,8 @@ func main() {
 
 	// Register the functions to be called from JS
 	js.Global().Set("SDKVersion", js.FuncOf(jsSKDVersion))
+	js.Global().Set("NodeInfo", js.FuncOf(jsConsumeAPINodeInfo))
+	// Test Functions
 	js.Global().Set("square", js.FuncOf(jsSquare))
 	js.Global().Set("getTestData", js.FuncOf(jsGetTestData))
 
